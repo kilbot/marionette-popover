@@ -1,0 +1,21 @@
+@import "tether";
+@import "tether-theme-arrows";
+
+$themePrefix: "popover";
+$arrowSize: 8px;
+$backgroundColor: black;
+$color: #eeeeee;
+$useDropShadow: true;
+
+@include tether($themePrefix: $themePrefix);
+@include tether-theme-arrows($themePrefix: $themePrefix, $arrowSize: $arrowSize, $backgroundColor: $backgroundColor, $color: $color, $useDropShadow: $useDropShadow);
+
+// Just a few additions
+
+.#{$themePrefix}-element.#{$themePrefix}-theme-arrows {
+  //pointer-events: none;
+  z-index: 1000;
+  .#{$themePrefix}-content {
+    padding: 0.5em 1em;
+  }
+}
