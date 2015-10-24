@@ -33,11 +33,11 @@
         openOn    : undefined // manual trigger
       });
 
-      // get Drop instance
+      // new Drop instance
       this.drop = new _Drop(options);
 
       // attach region
-      this.drop.region = new Marionette.Region({
+      this.drop.region = new Mn.Region({
         el: this.drop.content
       });
 
@@ -74,10 +74,6 @@
     template: _.template('' +
       '<h1><a data-action="popover1" href="#">Popover 1</a></h1>' +
       '<h1><a data-action="popover2" href="#">Popover 2</a></h1>'),
-
-    attributes: {
-      style: 'height:100%;'
-    },
 
     ui: {
       popover1 : '[data-action="popover1"]',
@@ -116,6 +112,10 @@
       model: new Bb.Model({})
     }));
 
+  });
+
+  $('[data-action="empty"]').click( function(){
+    App.getRegion('main').empty();
   });
 
   window.App = App;
